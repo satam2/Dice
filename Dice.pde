@@ -3,22 +3,27 @@ void setup()
   size(500,500);
   noLoop();
   textAlign(CENTER, CENTER);
+  textSize(30);
 }
 
-Die test;
+Die test; 
+int sum = 0;
 
 void draw()
 {
-  for(int y = 166; y < 500; y += 166){
-    for(int x = 166; x < 500; x += 166)
-      test = new Die(x,y);
-  }
-  test.show();
+  background(150);
+  for(int y = 85; y < 500; y += 166){
+    for(int x = 85; x < 500; x += 166){
+      Die test = new Die(x,y);
+      test.show();
+    } // x loop
+  } // y loop
+  text("Sum: " + sum, 250,20);
 }
 
 void mousePressed()
 {
-  test.roll();
+  sum = 0;
   redraw();
 }
 
@@ -35,6 +40,7 @@ class Die //models one single dice cube
   void roll()
   {
     face = (int)(Math.random()*6)+1;
+    sum += face;
   }
   void show()
   {
