@@ -76,8 +76,7 @@ class Card //models one single card
   
   Card(int x, int y) //constructor
   {
-    face = 1
-    // flip();
+    flip();
     suit = (int)(Math.random()*4);
     myX = x;
     myY = y;
