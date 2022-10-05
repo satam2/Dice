@@ -155,52 +155,52 @@ class Card //models one single card
       text("A", myX+22, myY+30);
     }
     if(face == 2){
-      text("2", myX-22, myY-35);
+      text("2", myX-22, myY-30);
       text("2", myX+23, myY+30);
     }
     if(face == 3){
-      text("3", myX-22, myY-35);
+      text("3", myX-22, myY-30);
       text("3", myX+23, myY+30);
     }
     if(face == 4){
-      text("4", myX-22, myY-35);
+      text("4", myX-22, myY-30);
       text("4", myX+22, myY+30);
     }
     if(face == 5){
-      text("5", myX-22, myY-35);
+      text("5", myX-22, myY-30);
       text("5", myX+22, myY+30);
     }
     if(face == 6){
-      text("6", myX-22, myY-35);
+      text("6", myX-22, myY-30);
       text("6", myX+22, myY+30);
     }
     if(face == 7){
-      text("7", myX-22, myY-35);
+      text("7", myX-22, myY-30);
       text("7", myX+22, myY+30);
     }
     if(face == 8){
-      text("8", myX-22, myY-35);
+      text("8", myX-22, myY-30);
       text("8", myX+22, myY+30);
     }
     if(face == 9){
-      text("9", myX-22, myY-35);
+      text("9", myX-22, myY-30);
       text("9", myX+22, myY+30);
     }
     if(face == 10){
-      text("10", myX-18, myY-35);
+      text("10", myX-18, myY-30);
       text("10", myX+17, myY+30);
     }
     if(face == 11){ // jack
-      text("J", myX-22, myY-35);
-      text("J", myX+23, myY+28);
+      text("J", myX-22, myY-30);
+      text("J", myX+23, myY+30);
     }
     if(face == 12){ // queen
-      text("Q", myX-22, myY-35);
-      text("Q", myX+22, myY+28);
+      text("Q", myX-22, myY-30);
+      text("Q", myX+22, myY+30);
     }
     if(face == 13){ // king
-      text("K", myX-22, myY-35);
-      text("K", myX+23, myY+29);
+      text("K", myX-22, myY-30);
+      text("K", myX+23, myY+30);
     }
   }
 }
