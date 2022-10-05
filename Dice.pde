@@ -187,7 +187,7 @@ class Card //models one single card
     }
     if(face == 10){
       text("10", myX-18, myY-30);
-      text("10", myX+17, myY+30);
+      text("10", myX+17, myY+33);
     }
     if(face == 11){ // jack
       text("J", myX-22, myY-30);
