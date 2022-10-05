@@ -6,22 +6,54 @@ void setup()
   textSize(30);
 }
 
-Card test; 
 int sum = 0;
+
+boolean casino = false;
+boolean playerTurn = false;
+boolean dealerTurn = false;
+boolean win = false;
+boolean bust = false;
+boolean tie = false;
+
+Card test; 
 
 void draw()
 {
   background(#2c8257);
-  //Card test = new Card(250,250);
-  //test.show();
-  for(int y = 85; y < 500; y += 166){
-    for(int x = 85; x < 500; x += 166){
-      Card test = new Card(x,y);
-      test.show();
-    } // x loop
-  } // y loop
-  fill(0);
-  text("Sum: " + sum, 250,20);
+  if(casino == false){
+    for(int y = 85; y < 500; y += 166){
+      for(int x = 85; x < 500; x += 166){
+        Card test = new Card(x,y);
+        test.show();
+      } // x loop
+    } // y loop
+    fill(255);
+    text("Sum: " + sum, 250,20);
+  } // normal card program
+  
+  if(casino)
+    blackjack();
+}
+
+void keyPressed(){
+  if(key == 'b')
+    casino = true;
+  if(key == 'h') // hit 
+    System.out.println("h");
+  if(key == 's') // stand 
+    System.out.println("s");
+  if(key == 'r') // new round
+    System.out.println("r");
+}
+
+void blackjack(){
+  // deal two cards to dealer and player
+  // player goes first( while playerTurn == true, dealerPlays = false
+  // when dealer is playing, no keys work
+  // dealer always flips when sum <=16
+  
+  // bust, win, tie
+  // if player sum = 21, automatically playerTurn == false and dealerPlays == true;
 }
 
 void mousePressed()
@@ -52,16 +84,12 @@ class Card //models one single card
   }
   void show()
   {
-    fill(240);
-    stroke(1);
-    rect(myX-33,myY-45,65,90);
     textSize(20);
     if(suit == 0){ // spade
       fill(240);
-      stroke(1);
+      noStroke();
       rect(myX-33,myY-45,65,90);
       fill(0);
-      noStroke();
       beginShape();
         curveVertex(myX,myY+10);
         curveVertex(myX,myY+10);
@@ -77,10 +105,9 @@ class Card //models one single card
       triangle(myX,myY+10,myX+5,myY+20,myX-5,myY+20);
     if(suit == 1){ // heart
       fill(240);
-      stroke(1);
+      noStroke();
       rect(myX-33,myY-45,65,90);
       fill(255,0,0);
-      noStroke();
       beginShape();
         curveVertex(myX,myY-5);
         curveVertex(myX,myY-5);
@@ -95,10 +122,9 @@ class Card //models one single card
     }
     if(suit == 2){ // club
       fill(240);
-      stroke(1);
+      noStroke();
       rect(myX-33,myY-45,65,90);
       fill(0);
-      noStroke();
       ellipse(myX-7,myY+2,15,15);
       ellipse(myX,myY-7,15,15);
       ellipse(myX+7,myY+2,15,15);
@@ -106,10 +132,9 @@ class Card //models one single card
     }
     if(suit == 3){ // diamond
       fill(240);
-      stroke(1);
+      noStroke();
       rect(myX-33,myY-45,65,90);
       fill(255,0,0);
-      noStroke();
       beginShape();
         vertex(myX,myY-14);
         vertex(myX-8,myY);
