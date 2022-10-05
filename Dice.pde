@@ -76,7 +76,8 @@ class Card //models one single card
   
   Card(int x, int y) //constructor
   {
-    flip();
+    face = 1
+    // flip();
     suit = (int)(Math.random()*4);
     myX = x;
     myY = y;
@@ -150,7 +151,7 @@ class Card //models one single card
       endShape();
     }
     if(face == 1){
-      text("A", myX-21, myY-35);
+      text("A", myX-21, myY-30);
       text("A", myX+22, myY+30);
     }
     if(face == 2){
