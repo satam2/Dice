@@ -2,6 +2,7 @@ void setup()
 {
   size(500,500);
   noLoop();
+  background(#2c8257);
   textAlign(CENTER, CENTER);
   textSize(30);
 }
@@ -38,10 +39,13 @@ void draw()
 void keyPressed(){
   if(key == 'b')
     casino = true;
+    redraw();
   if(key == 'h') // hit 
     System.out.println("h");
+    redraw();
   if(key == 's') // stand 
     System.out.println("s");
+    redraw();
   if(key == 'r') // new round
     System.out.println("r");
 }
@@ -54,6 +58,9 @@ void blackjack(){
   
   // bust, win, tie
   // if player sum = 21, automatically playerTurn == false and dealerPlays == true;
+  fill(#654321);
+  rect(0,0,500,50);
+  rect(0,450,500,50);
 }
 
 void mousePressed()
@@ -196,4 +203,5 @@ class Card //models one single card
     }
   }
 }
+
 
