@@ -9,63 +9,24 @@ void setup()
 
 int sum = 0;
 
-boolean casino = false;
-boolean playerTurn = false;
-boolean dealerTurn = false;
-boolean win = false;
-boolean bust = false;
-boolean tie = false;
-
 Card test; 
 
 void draw()
 {
   background(#2c8257);
-  if(casino == false){
-    for(int y = 85; y < 500; y += 166){
-      for(int x = 85; x < 500; x += 166){
-        Card test = new Card(x,y);
-        test.show();
-      } // x loop
-    } // y loop
-    fill(255);
-    text("Sum: " + sum, 250,20);
-  } // normal card program
-  
-  if(casino)
-    blackjack();
+  for(int y = 85; y < 500; y += 166){
+    for(int x = 85; x < 500; x += 166){
+      Card test = new Card(x,y);
+      test.show();
+    } // x loop
+  } // y loop
+  fill(255);
+  text("Sum: " + sum, 250,20);
 }
 
-void keyPressed(){
-  if(key == 'b')
-    casino = true;
-    redraw();
-  if(key == 'h') // hit 
-    System.out.println("h");
-    redraw();
-  if(key == 's') // stand 
-    System.out.println("s");
-    redraw();
-  if(key == 'r') // new round
-    System.out.println("r");
-}
-
-void blackjack(){
-  // deal two cards to dealer and player
-  // player goes first( while playerTurn == true, dealerPlays = false
-  // when dealer is playing, no keys work
-  // dealer always flips when sum <=16
-  
-  // bust, win, tie
-  // if player sum = 21, automatically playerTurn == false and dealerPlays == true;
-  fill(#654321);
-  rect(0,0,500,50);
-  rect(0,450,500,50);
-}
 
 void mousePressed()
 {
-  //System.out.println("("+mouseX+","+mouseY+")");
   sum = 0;
   redraw();
 }
